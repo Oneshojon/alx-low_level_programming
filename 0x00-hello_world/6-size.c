@@ -5,7 +5,7 @@
  *
  *return: Always 0 (successs)
  */
-int main()
+int main(void)
 {
 	int a;
 	long int b;
