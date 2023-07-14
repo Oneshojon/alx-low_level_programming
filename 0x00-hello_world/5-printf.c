@@ -1,10 +1,9 @@
 #include <stdio.h>
 
 /**
- *my_func - This function prints this 
- *@arg1: It comes with just one 
+ *main - Entry point
  *
- *value: This will return the message
+ *Return: Always 0 (success)
  */
 int main(void)
 {
