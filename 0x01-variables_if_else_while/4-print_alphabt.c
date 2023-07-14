@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- *main - This function will jump some alphabets 
+ *main - This function will jump some alphabets
  *
  *Return: It will return small letters
  */
