@@ -8,7 +8,7 @@
  */
 int main(void)
 {
-	int n;
+	int n=n;
 	if (n<0)
 		printf("is negative\n");
 	else if (n==0)
