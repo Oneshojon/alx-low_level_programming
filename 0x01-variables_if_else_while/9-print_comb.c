@@ -17,6 +17,5 @@ int main(void)
 		val++;
 	}
 	putchar('9');
-	putchar('\n');
 	return (0);
 }
