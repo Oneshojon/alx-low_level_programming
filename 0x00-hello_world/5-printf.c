@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-
 /**
  *my_func - This function prints this 
  *@arg1: It comes with just one 
@@ -9,7 +8,7 @@
  */
 int main(void)
 {
-	printf("with proper grammar, but the outcome is a piece of art,");
+	printf("with proper grammar, but the outcome is a piece of art,\n");
 	return (0);
 }
 
