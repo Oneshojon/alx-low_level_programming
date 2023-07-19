@@ -14,9 +14,8 @@ int main(void)
 	{
 		f = j + k;
 		printf("%ld, ", f);
-		temp = f;
-		k = temp;
 		j = k;
+		k = f;
 		i++;
 	}
 	putchar('\n');
