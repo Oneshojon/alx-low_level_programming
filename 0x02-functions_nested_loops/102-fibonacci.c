@@ -16,7 +16,7 @@ int main(void)
 		printf("%ld", f);
 		if (i != 49)
 		{
-			printf(" ,");
+			printf(", ");
 		}
 		j = k;
 		k = f;
