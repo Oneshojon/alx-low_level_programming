@@ -17,8 +17,6 @@ int main(void)
 		{
 			sum += f;
 		}
-		else
-			;
 		if (f <= 4000000)
 		{
 			j = k;
