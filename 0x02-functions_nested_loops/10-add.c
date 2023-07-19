@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- *add(int i, int j) - returns time
+ *add - returns time
  *@i: Parameter1
  *@j: parameter2
  *
