@@ -13,7 +13,11 @@ int main(void)
 	while (i < 50)
 	{
 		f = j + k;
-		printf("%ld, ", f);
+		printf("%ld", f);
+		if (i != 49)
+		{
+			printf(" ,");
+		}
 		j = k;
 		k = f;
 		i++;
