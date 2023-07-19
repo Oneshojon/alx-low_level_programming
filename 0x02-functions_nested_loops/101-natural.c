@@ -10,9 +10,9 @@ int main(void)
 	int i = 0;
 	int sum = 0;
 
-	while (i > 2 && i < 1024)
+	while (i < 1024)
 	{
-		if (i % 3 == 0 || i % 5 == 0)
+		if ((i % 3 == 0) || (i % 5 == 0))
 		{
 			sum += i;
 		}
