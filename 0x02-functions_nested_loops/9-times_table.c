@@ -15,10 +15,13 @@ void times_table(void)
 		{
 			k = i * j;
 			if (k < 10)
-			{
-				_putchar(' ');
-				_putchar('0' + k);
-			}
+				if (j == 0)
+					_putchar('0' + k);
+				else
+				{
+					_putchar(' ');
+					_putchar('0' + k);
+				}
 			else
 			{
 				_putchar('0' + k / 10);
@@ -30,6 +33,5 @@ void times_table(void)
 				_putchar(' ');
 			}
 		}
-		_putchar('\n');
-	}
-}
+			_putchar('\n');
+	}}
