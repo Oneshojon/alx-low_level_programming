@@ -17,11 +17,16 @@ int main(void)
 		{
 			sum += f;
 		}
-		if (f > 4000000)
+		else
+			;
+		if (f <= 4000000)
+		{
+			j = k;
+			k = f;
+			i++;
+		}
+		else
 			break;
-		j = k;
-		k = f;
-		i++;
 	}
 	printf("%ld\n", sum);
 	return (0);
