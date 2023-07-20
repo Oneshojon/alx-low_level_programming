@@ -2,6 +2,7 @@
 
 /**
  * _isdigit - check the code.
+ *@c: A parameter
  *
  * Return: Always 0.
  */
