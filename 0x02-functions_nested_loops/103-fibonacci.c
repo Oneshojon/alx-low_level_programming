@@ -7,20 +7,25 @@
  */
 int main(void)
 {
-	int i = 0;
-	long j = 0, k = 1, f, sum;
+	int fib1 = 1;
+	int fib2 = 2;
+	int next_fib;
+	int sum_ev_fib = 2;
 
-	while (i < 50 && f <= 4000000)
+	while (1)
 	{
-		f = j + k;
-		if ((f % 2) == 0)
+		next_fib = fib1 + fib2;
+		if (next_fib > 4000000)
 		{
-			sum += f;
+			break;
 		}
-		j = k;
-		k = f;
-		i++;
+		if (next_fib % 2 == 0)
+		{
+			sum_ev_fib += next_fib;
+		}
+		fib1 = fib2;
+		fib2 = next_fib;
 	}
-	printf("%ld\n", sum);
+	printf("%d\n", sum_ev_fib);
 	return (0);
 }
