@@ -7,17 +7,17 @@
  */
 int main(void)
 {
-	long fib1 = 1;
-	long fib2 = 2;
-	long next_fib;
+	unsigned long long fib1 = 1;
+	unsigned long long fib2 = 2;
+	unsigned long long next_fib;
 	int steps = 0;
 
-	printf("%ld, ", fib1);
-	printf("%ld, ", fib2);
+	printf("%llu, ", fib1);
+	printf("%llu, ", fib2);
 	while (steps < 96)
 	{
 		next_fib = fib1 + fib2;
-		printf("%ld", next_fib);
+		printf("%llu", next_fib);
 		if (steps != 95)
 		{
 			printf(", ");
