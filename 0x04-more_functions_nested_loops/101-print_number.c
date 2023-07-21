@@ -9,6 +9,7 @@
 void print_number(int n)
 {
 	int x = 1, digit;
+	int leading_zeros = 0;
 
 	/*Handle negative numbers*/
 	if (n < 0)
@@ -25,6 +26,15 @@ void print_number(int n)
 	{
 		digit = n / x;
 		_putchar('0' + digit);
+		if (digit == 0 && leading_zeros == 0 && x != 1)
+		{
+			_putchar('0');
+		}
+		if (digit != 0)
+		{
+			leading_zeros = 1; 
+		}
+
 		n %= x;
 		x /= 10;
 	}
