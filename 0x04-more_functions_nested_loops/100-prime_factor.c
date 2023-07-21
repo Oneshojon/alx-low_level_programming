@@ -5,11 +5,11 @@
  *
  *Return: Zero always
  */
-long long int main(void)
+int main()
 {
-	long long int m_prime;
-	long long int i;
-	long long int num = 612852475143;
+	long m_prime;
+	long i;
+	long num = 612852475143;
 
 	while (num % 2 == 0)
 	{
@@ -27,6 +27,7 @@ long long int main(void)
 	if (num > 2)
 	{
 		m_prime = num;
-		printf("%lld\n", m_prime);
+		printf("%ld\n", m_prime);
 	}
+	return (0);
 }
