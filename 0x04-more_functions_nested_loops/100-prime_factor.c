@@ -5,7 +5,7 @@
  *
  *Return: Zero always
  */
-int main()
+int main(void)
 {
 	long m_prime;
 	long i;
