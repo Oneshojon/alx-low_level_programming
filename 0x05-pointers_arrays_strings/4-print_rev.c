@@ -18,8 +18,8 @@ void print_rev(char *s)
 		count += 1;
 		i++;
 	}
-	_putchar('\0');
-	for (x = count; x >= 0; x--)
+
+	for (x = count - 1; x >= 0; x--)
 	{
 		_putchar(s[x]);
 	}
