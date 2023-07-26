@@ -12,7 +12,7 @@ int _atoi(char *s)
 	int j = 0;
 	int k = 0;
 	int digits;
-	int m = 0;
+	unsigned int m = 0;
 
 	while (s[i] != '\0')
 	{
