@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- *_memcpy _ Copies memory area
+ *_memcpy - Copies memory area
  *@dest: The destination coppied to
  *@src: Where memory is coppied from
  *@n: Mximum bytes to be coppied
