@@ -25,6 +25,8 @@ void set_string(char **s, char *to)
 			{
 				strcpy(new_str, to);
 			}
+			new_str[len] = '\0';
+
 
 			*s = new_str;
 		}
