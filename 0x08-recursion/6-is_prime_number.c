@@ -14,7 +14,7 @@ int checker(int x, int n)
 		return (0);
 	}
 	if (x * x < n)
-		return checker(x + 1, n);
+		return (checker(x + 1, n));
 	return (1);
 }
 
