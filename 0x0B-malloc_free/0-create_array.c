@@ -20,7 +20,7 @@ char *create_array(unsigned int size, char c)
 	if (arr == NULL)
 	{
 		/*Handle memory allocation failure*/
-		return (NULL); 
+		return (NULL);
 	}
 	while (i < size)
 	{
