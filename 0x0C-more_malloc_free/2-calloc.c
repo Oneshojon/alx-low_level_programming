@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include <stddef.h>
+#include <stdio.h>
 #include "main.h"
 
 /**
@@ -11,7 +11,7 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	int *arr;
+	char *arr;
 	unsigned int count = 0;
 
 	if (nmemb == 0 || size == 0)
