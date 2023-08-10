@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stddef.h>
+#include "main.h"
 
 /**
  *_calloc - Allocates memory for an arry
