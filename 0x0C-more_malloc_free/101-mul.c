@@ -31,6 +31,8 @@ int is_positive_num(const char *str)
 
 int main(int argc, char *argv[])
 {
+	unsigned long num1, num2;
+
 	if (argc != 3)
 	{
 		printf("Error\n");
@@ -41,9 +43,9 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (98);
 	}
-	unsigned long long num1 = strtoull(argv[1], NULL, 10);
-	unsigned long long num2 = strtoull(argv[2], NULL, 10);
+	num1 = strtoull(argv[1], NULL, 10);
+	num2 = strtoull(argv[2], NULL, 10);
 
-	printf("%llu\n", num1 * num2);
+	printf("%lu\n", num1 * num2);
 	return (0);
 }
