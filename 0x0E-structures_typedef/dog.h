@@ -16,7 +16,7 @@ typedef struct dog
 	float age;
 	char *owner;
 
-} dog_t; 
+} dog_t;
 /*Additional functions*/
 int _putchar(char c);
 #endif
