@@ -4,7 +4,7 @@
 #include <string.h>
 
 /**
- *int_dog - Initialize a variable of type struct dog
+ *init_dog - Initialize a variable of type struct dog
  *@d: pointer to the ariable
  *@name: pointer to the dog name
  *@age: Age of the dog
