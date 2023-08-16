@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- *free_deg - Free the momories allocated to dog_t
+ *free_dog - Free the momories allocated to dog_t
  *@d: pointer to a new dog
  *
  *Return: an empty pointer
