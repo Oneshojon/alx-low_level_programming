@@ -27,11 +27,11 @@ int main(int argc, char *argv[])
 	if (pt == NULL)
 	{
 		printf("Error\n");
-		exit(99)
+		exit(99);
 	}
 	i = atoi(argv[1]);
 	j = atoi(argv[3]);
 
 	printf("%d\n", pt(i, j));
-	return (NULL)
+	return (0);
 }
