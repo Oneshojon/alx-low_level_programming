@@ -14,7 +14,7 @@ int op_add(int a, int b)
 }
 
 /**
- *op_div - divides the two 
+ *op_div - divides the two
  *@a: The first value
  *@b: The second value
  *
@@ -31,7 +31,7 @@ int op_div(int a, int b)
 }
 
 /**
- *op_sub - subtracts the two 
+ *op_sub - subtracts the two
  *@a: The first value
  *@b: The second value
  *
@@ -42,7 +42,7 @@ int op_sub(int a, int b)
 	return (a - b);
 }
 /**
- *op_mul - multiplies the two 
+ *op_mul - multiplies the two
  *@a: The first value
  *@b: The second value
  *
@@ -54,7 +54,7 @@ int op_mul(int a, int b)
 }
 
 /**
- *op_mod - find remainder when a / b 
+ *op_mod - find remainder when a / b
  *@a: The first value
  *@b: The second value
  *
