@@ -1,9 +1,8 @@
 
-	global main
-	extern printf
+global	main
+	extern	printf
 
 main:
-	push rbp
 	mov edi, format
 	xor eax, eax
 	call printf
