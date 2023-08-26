@@ -1,14 +1,12 @@
 
-section .data
-	hello db "Hello, Holberton", 0
-
-section .text
 	global main
 	extern printf
 
 main:
 	push rbp
-	mov rdi, hello
+	mov edi, format
+	xor eax, eax
 	call printf
-	add rsp, 8 ; Clean up the stack
+	mov	eax, 0
 	ret
+format: db 'Hello, Holberton\n',0
