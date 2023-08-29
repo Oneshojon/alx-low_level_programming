@@ -4,7 +4,7 @@
 
 /**
  *sum_listint - sums all the data in the list
- *head: pointer to the string
+ *@head: pointer to the string
  *
  *Return: The sum of the numbers
  */
