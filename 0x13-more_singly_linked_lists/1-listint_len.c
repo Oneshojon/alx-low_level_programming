@@ -4,6 +4,7 @@
 
 /**
  *listint_len - Returns the number of nodes in a linked list
+ *@h: pointer to string
  *
  *Return: a value
  */
