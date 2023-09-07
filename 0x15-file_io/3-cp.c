@@ -1,67 +1,86 @@
 #include "main.h"
-#include <stdlib.h>
 #include <unistd.h>
+#include <stdlib.h>
+#include <stddef.h>
 #include <fcntl.h>
 #include <stdarg.h>
+#include <stdio.h>
 
 /**
- *error_exit - prints the error message and returns code
+ *print_error - prints error to posix message and return exit code
  *@exit_code: The required exit code
- *@format: THe text to print
+ *@message: The message to be printed
+ *@args: other arguments
  *
- *Return: Nothing
+ *Return: Error codes
  */
-void error_exit(int exit_code, const char *format, ...)
+void print_error(int exit_code, const char *message, ...)
 {
 	va_list args;
 
-	va_start(args, format);
-	dprintf(STDERR_FILENO, format, args);
+	var_start(args, format);
+	dprintf(STDERR_FILENO, message, args);
 	va_end(args);
 	exit(exit_code);
 }
 /**
- *main - copies the content of  file to another file
+ *main - copies the content of a file to another
  *@argc: Number of arguments
- *@argv: array of pointers to arguments
+ *@argv: Array of pointers to the arguments
  *
- *Return: Exit codes
+ *Return: Error codes
  */
-
 int main(int argc, char *argv[])
 {
-	const char *file_from = argv[1];
-	const char *file_to = argv[2];
-	int fd_from, fd_to;
-	ssize_t n, written;
-	char buffer[1024];
-
 	if (argc != 3)
 	{
-		error_exit(97, "Usage: cp file_from fie_to\n");
-
+		print_error(97, "Usage: cp file_from file_to\n");
 	}
-	fd_from = open(file_from, O_RDONLY);
-	if (fd_from == -1)
-		error_exit(98, "Error: Can't read from file %s\n",
-				file_from);
-	fd_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC,
-			S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
-	if (fd_to == -1)
-		error_exit(99, "Error: Can't write to file %s\n", file_to);
-	while ((n = read(fd_from, buffer, sizeof(buffer))) > 0)
-	{
-		written = write(fd_to, buffer, n);
-		if (written == -1)
+
+	int fd1, fd2;
+	const char *file_from = argv[1];
+	const char *file_to = argv[2];
+	char buffer[1024];
+	ssize_t bytes_read, bytes_written;
+
+	fd1 = open(file_from, O_RDONLY);
+		if (fd1 == -1 || access(file_from, F_OK) == -1)
 		{
-			error_exit(99, "Error: Can't write to file %s\n", file_to);
+			print_error(98, "Error: Can't read from file %s\n", file_from);
+		}
+	if (access(file_to) == 0)
+	{
+		fd2 = open(file_to, O_WRONLY | O_TRUNC);
+		if (fd2 == -1)
+		{
+			print_error(99, "Error: Can't write to %s\n", file_to);
 		}
 	}
-	if (n == -1)
-		error_exit(98, "Error: Can't read from file %s\n", file_from);
-	if (close(fd_from) == -1)
-		error_exit(100, "Error: Can't close fd %d\n", fd_from);
-	if (close(fd_to) == -1)
-		error_exit(100, "Error: Can't close fd %d\n", fd_to);
+	else
+	{
+		fd2 = open(file_to, O_WRONLY | O_CREAT, 0664);
+		if (fd2 == -1)
+			print_error(99, "Error: Can't write to %s\n", file_to);
+	}
+	while ((bytes_read = read(fd1, buffer, sizeof(buffer))) > 0)
+	{
+		bytes_written = write(fd2, buffer, bytes_read);
+		if (bytes_read != bytes_written)
+		{
+			print_error(99, "Error: Can't write to %s\n", file_to);
+		}
+	}
+	if (bytes_read == -1)
+	{
+		print_error(98, "Error: Can't read from file %s\n", file_from);
+	}
+	if (close(fd1) == -1)
+	{
+		print_error(100, "Error: Can't close fd %d\n", fd1);
+	}
+	if (close(fd2) == -1)
+	{
+		print_error(100, "Error: Can't close fd %d\n", fd2);
+	}
 	return (0);
 }
