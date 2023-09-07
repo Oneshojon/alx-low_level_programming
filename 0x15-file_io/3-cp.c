@@ -18,7 +18,7 @@ void print_error(int exit_code, const char *message, ...)
 {
 	va_list args;
 
-	var_start(args, format);
+	va_start(args, message);
 	dprintf(STDERR_FILENO, message, args);
 	va_end(args);
 	exit(exit_code);
@@ -32,23 +32,20 @@ void print_error(int exit_code, const char *message, ...)
  */
 int main(int argc, char *argv[])
 {
-	if (argc != 3)
-	{
-		print_error(97, "Usage: cp file_from file_to\n");
-	}
-
 	int fd1, fd2;
 	const char *file_from = argv[1];
 	const char *file_to = argv[2];
 	char buffer[1024];
 	ssize_t bytes_read, bytes_written;
 
+	if (argc != 3)
+		print_error(97, "Usage: cp file_from file_to\n");
 	fd1 = open(file_from, O_RDONLY);
 		if (fd1 == -1 || access(file_from, F_OK) == -1)
 		{
 			print_error(98, "Error: Can't read from file %s\n", file_from);
 		}
-	if (access(file_to) == 0)
+	if (access(file_to, F_OK) == 0)
 	{
 		fd2 = open(file_to, O_WRONLY | O_TRUNC);
 		if (fd2 == -1)
