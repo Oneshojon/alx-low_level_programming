@@ -9,4 +9,5 @@ int append_text_to_file(const char *filename, char *text_content);
 void error_exit(int exit_code, const char *format, ...);
 void print_error(int exit_code, const char *message, ...);
 int main(int argc, char *argv[]);
+void display_elf_info(Elf64_Ehdr *header);
 #endif
