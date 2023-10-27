@@ -3,9 +3,9 @@
 /**
  *get_endianness - Checks for endianess
  *
- *Returns: 1 or 0
+ *Return: 1 or 0
  */
- int get_endianness(void)
+int get_endianness(void)
 {
 	int value = 1;
 	char *check = (char *)&value;
