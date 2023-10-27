@@ -11,10 +11,11 @@ unsigned int binary_to_uint(const char *b)
 {
 	unsigned int number = 0;
 	int count = 0;
-	int power = strlen(b) - 1;
+	int power;
 
 	if (b == NULL)
 		return (0);
+	power = strlen(b) - 1;
 	while (b[count])
 	{
 		if (b[count] != '1' && b[count] != '0')
