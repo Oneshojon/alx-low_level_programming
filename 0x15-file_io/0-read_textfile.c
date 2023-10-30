@@ -6,9 +6,9 @@
 
 /**
  *read_textfile - Reads text file and print it to the PSIX
- standard output
+ *tandard output
  *@filename: pointer to the file
- *@letter: Number of letter to read and write
+ *@letters: Number of letter to read and write
  *
  *Return: The number of letter read and printed
  */
