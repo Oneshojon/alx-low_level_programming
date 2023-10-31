@@ -8,7 +8,7 @@
 #include <stdlib.h>
 
 /**
- *checkElf - Checks if a given file is an elf file.
+ *check_elf - Checks if a given file is an elf file.
  *@e_ident: A pointer to the magic numbers array.
  *
  *Return: exit code 98 if the file is not ELF file
@@ -230,7 +230,7 @@ void print_entry(unsigned long int e_entry, unsigned char *e_ident)
 		printf("%#lx\n", e_entry);
 }
 /**
- *cllose_elf - Closes an ELF file.
+ *close_elf - Closes an ELF file.
  *@elf: The file descriptor for the ELF file.
  *
  *Return: Nothing
