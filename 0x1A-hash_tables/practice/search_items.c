@@ -7,14 +7,19 @@
 char *ht_search(HashTable *table, char *key)
 {
 	int index = hash_function(key);
-	Ht_item* item = table->items[index];
+	Ht_item *item = table->items[index];
+	LinkedList *head = table->overflow_buckets[index];
 
 	if (item != NULL)
 	{
 		if (strcmp(item->key, key) == 0)
 			return item->value;
+		if (head == NULL)
+			return (NULL);
+		item = head->item;
+		head = head->next;
 	}
-	return NULL;
+	return (NULL);
 }
 
 /**
@@ -23,7 +28,7 @@ char *ht_search(HashTable *table, char *key)
  */
 void print_search(HashTable *table, char *key)
 {
-	char* val = ht_search(table, key);
+	char *val = ht_search(table, key);
 
 	if (val == NULL)
 	{

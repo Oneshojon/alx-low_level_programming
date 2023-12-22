@@ -7,5 +7,5 @@ unsigned long hash_function(char *str)
 
 	for (j = 0; str[j]; j++)
 		i += str[j];
-	return i % CAPACITY
+	return (i % CAPACITY);
 }

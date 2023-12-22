@@ -1,6 +1,6 @@
 #include "ht.h"
 
-void print_table(HashTable* table)
+void print_table(HashTable *table)
 {
 	int i;
 
@@ -9,7 +9,7 @@ void print_table(HashTable* table)
 	{
 		if (table->items[i])
 		{
-			printf("Index:%d, Key:%s, Value:%s\n", i, table->items[i] -> key, table->items[i]->value);
+			printf("Index:%d, Key:%s, Value:%s\n", i, table->items[i]->key, table->items[i]->value);
 		}
 	}
 	printf("-------------------\n\n");
